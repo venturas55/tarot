@@ -1,2 +1,2 @@
-# Tabu
 # tarot
+con archivos jpg
