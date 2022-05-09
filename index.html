@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>TAROT de Rose</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <h1>El Tarot de Rose</h1>
+
+        <div id="tablero">
+            <div class="carta" v-for="carta in cartas">
+                <img :src="carta" alt="una carta">
+            </div>
+            <img src="./img/reverso.png" alt="reverso" @click="sacaCarta">
+        </div>
+
+        <div>
+            <button @click="sacaCarta">SACA CARTA</button>
+            <button @click="resetGame">REINICIAR TAROT</button>
+            <!-- <button @click="cambiarEquipo">CAMBIAR TURNO</button>
+                <button @click="guardarMarcador">GuardarMarcador</button> -->
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script type="text/javascript" src="words.json"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
