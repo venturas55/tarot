@@ -1,11 +1,3 @@
-/*var keyword = document.getElementById("input_busqueda");
-var contentGifs = document.getElementById("contentGifs");
-var trending = document.getElementById("trending");
-var boton = document.getElementById("boton");
-var mp = document.getElementsByTagName("li");
-boton.addEventListener("click", buscar, false);
-*/
-
 var app = new Vue({
     el: "#app",
     data: {
