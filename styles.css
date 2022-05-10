@@ -20,8 +20,9 @@ header {
     background-color: rgb(168, 58, 219);
 }
 
-header h1 {
+h1 {
     margin: 0px;
+    color: rgb(168, 58, 219);
 }
 
 .aside-2 {
@@ -68,4 +69,40 @@ footer {
     text-align: left;
     background-color: rgb(168, 58, 219);
     color: aliceblue;
+}
+
+.flame {
+	position: absolute;
+    top:100px;
+    z-index:-1;
+	background: linear-gradient(-45deg, red, orange);
+	border-radius: 150px 150px 0px 150px;
+	transform: rotate(-135deg);
+	animation: 0.8s flame infinite;
+	filter: blur(6px);
+	box-shadow: 10px 13px 80px #700;
+	border: 15px solid black;
+	border-left-width: 20px;
+	border-top-width: 20px;
+}
+.left{
+    left:10%;
+}
+.right{
+    right: 10%;
+}
+
+@keyframes flame {
+	0% {
+		height: 80px;
+		width: 80px;
+	}
+	50% {
+		height: 70px;
+		width: 70px;
+	}
+	100% {
+		height: 80px;
+		width: 80px;
+	}
 }

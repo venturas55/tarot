@@ -11,28 +11,32 @@
 
 <body>
     <div id="app">
-        <header>
+      
             <h1>El Tarot de Rose</h1>
 
-
-        </header>
+   
         <div id="tablero">
-            <div class="carta" v-for="carta in cartas">
+            <div class="flame left"></div>
+            <div class="flame right"></div>
+            <div class="carta" v-for="carta in cartasMostradas">
                 <img :src="carta" alt="una carta" @click="quitarCarta">
             </div>
             <div class="carta">
                 <img src="./img/reverso.jpg" alt="reverso" @click="sacaCarta">
             </div>
+           
         </div>
 
         <div>
             <!--         <button @click="sacaCarta">SACA CARTA</button> -->
             <button @click="resetGame">REINICIAR TAROT</button>
-            <button @click="recuperarUltimaCarta">RECUPERAR ULTIMA</button>
+            <button @click="recuperarUltimaCarta" v-if="cartasRecuperables.length>0">RECUPERAR ULTIMA</button>
         </div>
-        <footer>
+        
+  
+ <!--        <footer>
             Rose Infinita 2022
-        </footer>
+        </footer> -->
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
