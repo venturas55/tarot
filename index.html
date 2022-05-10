@@ -16,8 +16,10 @@
 
    
         <div id="tablero">
-            <div class="flame left"></div>
-            <div class="flame right"></div>
+            <div class="flame left top"></div>
+            <div class="flame right top"></div>
+            <div class="flame left bottom"></div>
+            <div class="flame right bottom"></div>
             <div class="carta" v-for="carta in cartasMostradas">
                 <img :src="carta" alt="una carta" @click="quitarCarta">
             </div>
