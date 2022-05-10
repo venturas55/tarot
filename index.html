@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,32 @@
     <link rel="stylesheet" href="styles.css">
     <title>TAROT de Rose</title>
 </head>
+
 <body>
     <div id="app">
+        <header>
+            <h1>El Tarot de Rose</h1>
 
-        <h1>El Tarot de Rose</h1>
 
+        </header>
         <div id="tablero">
             <div class="carta" v-for="carta in cartas">
-                <img :src="carta" alt="una carta">
+                <img :src="carta" alt="una carta" @click="quitarCarta">
             </div>
-            <img src="./img/reverso.jpg" alt="reverso" @click="sacaCarta">
+            <div class="carta">
+                <img src="./img/reverso.jpg" alt="reverso" @click="sacaCarta">
+            </div>
         </div>
 
         <div>
-            <button @click="sacaCarta">SACA CARTA</button>
+            <!--         <button @click="sacaCarta">SACA CARTA</button> -->
             <button @click="resetGame">REINICIAR TAROT</button>
+            <button @click="recuperarUltimaCarta">RECUPERAR ULTIMA</button>
         </div>
-    </div>
+        <footer>
+            Rose Infinita 2022
+        </footer>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script type="text/javascript" src="words.json"></script>

@@ -4,14 +4,28 @@ body {
 }
 
 #app {
+    margin-top: 50px;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
 }
 
-h1 {
-    color: rgb(168, 58, 219);
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(168, 58, 219);
+}
+
+header h1 {
+    margin: 0px;
+}
+
+.aside-2 {
+    order: 3;
 }
 
 .carta {
@@ -20,7 +34,7 @@ h1 {
 }
 
 img {
-    max-width: 300px;
+    max-width: 280px;
     max-height: 400px;
     width: auto;
     display: block;
@@ -38,9 +52,20 @@ img {
 
 button {
     height: 40px;
-    width: 80px;
+    width: 100px;
     background-color: rgb(168, 58, 219);
     border-radius: 5px;
     margin: 15px;
+    color: aliceblue;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: left;
+    background-color: rgb(168, 58, 219);
     color: aliceblue;
 }
