@@ -71,10 +71,10 @@ var app = new Vue({
             '8B.jpg',	'8E.jpg',	'8O.jpg',	'8C.jpg',	'7X.jpg',
             '9B.jpg',	'9E.jpg',	'9O.jpg',	'9C.jpg',	'8X.jpg',
             '10B.jpg',	'10E.jpg',	'10O.jpg',	'10C.jpg',	'9X.jpg',
-            '12B.jpg',	'11E.jpg',	'11O.jpg',	'11C.jpg',	'10X.jpg',
-            '13B.jpg',	'12E.jpg',	'12O.jpg',	'12C.jpg',	'11X.jpg',
-            '14B.jpg',	'13E.jpg',	'13O.jpg',	'13C.jpg',	'12X.jpg',
-            '.jpg',	'14E.jpg',	'14O.jpg',	'14C.jpg',	'13X.jpg',
+            '11B.jpg',	'11E.jpg',	'11O.jpg',	'11C.jpg',	'10X.jpg',
+            '12B.jpg',	'12E.jpg',	'12O.jpg',	'12C.jpg',	'11X.jpg',
+            '13B.jpg',	'13E.jpg',	'13O.jpg',	'13C.jpg',	'12X.jpg',
+            '14B.jpg',	'14E.jpg',	'14O.jpg',	'14C.jpg',	'13X.jpg',
                             '14X.jpg',
                             '15X.jpg',
                             '16X.jpg',
@@ -83,6 +83,7 @@ var app = new Vue({
                             '19X.jpg',
                             '20X.jpg',
                             '21X.jpg',
+            
             
 
         ]

@@ -2,46 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>TAROT de Rose</title>
 </head>
 
 <body>
     <div id="app">
-        <button @click="verOpciones=true">OPCIONES</button>
-            <h1>El Tarot de Rose</h1>
-
-   
-        <div id="tablero">
-            <div class="flame left top"></div>
-            <div class="flame right top"></div>
-            <div class="flame left bottom"></div>
-            <div class="flame right bottom"></div>
-            <div class="carta" v-for="carta in cartasMostradas">
-                <img :src="carta" alt="una carta" @click="quitarCarta">
-            </div>
-            <div class="carta">
-                <img src="./img/reverso.jpg" alt="reverso" @click="sacaCarta">
-            </div>
-           
-        </div>
-
-        <div>
+        <h1>El Tarot de Rose</h1>
+        <header>
+            <button @click="verOpciones=true">OPCIONES</button>
             <!--         <button @click="sacaCarta">SACA CARTA</button> -->
+
             <button @click="resetGame">REINICIAR TAROT</button>
-            <button @click="recuperarUltimaCarta" v-if="cartasRecuperables.length>0">RECUPERAR ULTIMA</button>
+        </header>
+    
+
+        <div id="tablero">
+            <div class="carta" v-for="carta in cartasMostradas">
+                <img :src="carta" alt="una carta" @click="quitarCarta" />
+            </div>
+            <div class="carta" id="dorso">
+                <img src="./img/reverso.jpg" alt="reverso" @click="sacaCarta" />
+            </div>
+            <button @click="recuperarUltimaCarta" v-if="cartasRecuperables.length>0">
+                RECUPERAR ULTIMA
+            </button>
         </div>
-        
-  
- <!--        <footer>
+
+        <!--        <footer>
             Rose Infinita 2022
         </footer> -->
 
-         <!-- MODAL OPCIONES -->
-         <div class="contenedorModal" v-show="verOpciones">
+        <!-- MODAL OPCIONES -->
+        <div class="contenedorModal" v-show="verOpciones">
             <div class="header">
                 <button class="close" @click="verOpciones=false;">X</button>
                 <h1>OPCIONES</h1>
@@ -49,19 +45,28 @@
             <div>
                 <div>
                     <p>Tipo de carta</p>
-                    <select  v-model="tipoBaraja">
+                    <select v-model="tipoBaraja">
                         <option value="riderwaite">Rider-Waite</option>
                         <option value="marseille">Marseille</option>
                     </select>
-                 
                 </div>
-                <button @click="verOpciones=false">CANCELAR</button>
+                <button @click="verOpciones=false">CERRAR</button>
             </div>
         </div>
-
+        <div class="vela">
+            <div class="candle">
+                <div class="flame">
+                    <!--  <div class="shadows"></div> -->
+                    <div class="top"></div>
+                    <div class="middle"></div>
+                    <!--   <div class="bottom"></div> -->
+                </div>
+                <!-- <div class="wick"></div> -->
+                <!-- <div class="wax"></div> -->
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-    <script type="text/javascript" src="words.json"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 
