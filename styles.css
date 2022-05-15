@@ -105,6 +105,24 @@ footer {
     bottom: 2%;
 }
 
+/* =========  VENTANA MODAL ======= */
+.contenedorModal {
+    background: rgb(202, 156, 215);
+    color: rgb(168, 58, 219);
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    top: 100px;
+    left: 10%;
+}
+
+
+.close {
+    width: 50px;
+    float: right;
+}
+
 @keyframes flame {
 	0% {
 		height: 80px;

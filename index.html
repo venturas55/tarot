@@ -11,7 +11,7 @@
 
 <body>
     <div id="app">
-      
+        <button @click="verOpciones=true">OPCIONES</button>
             <h1>El Tarot de Rose</h1>
 
    
@@ -39,6 +39,25 @@
  <!--        <footer>
             Rose Infinita 2022
         </footer> -->
+
+         <!-- MODAL OPCIONES -->
+         <div class="contenedorModal" v-show="verOpciones">
+            <div class="header">
+                <button class="close" @click="verOpciones=false;">X</button>
+                <h1>OPCIONES</h1>
+            </div>
+            <div>
+                <div>
+                    <p>Tipo de carta</p>
+                    <select  v-model="tipoBaraja">
+                        <option value="riderwaite">Rider-Waite</option>
+                        <option value="marseille">Marseille</option>
+                    </select>
+                 
+                </div>
+                <button @click="verOpciones=false">CANCELAR</button>
+            </div>
+        </div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
