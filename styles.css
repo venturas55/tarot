@@ -114,10 +114,15 @@ footer {
 
 
 /* ========================= CANDLE ================ */
-
+.vela{
+    transform: rotate(180deg);
+    z-index: -1;
+    position: fixed;
+    bottom: 20vh;
+}
 .candle {
     width: 34px;
-    margin: 60px auto 0 auto;
+    margin: 0px auto 0 auto;
     position: relative;
     height: 80%;
     align-self: flex-end;
