@@ -1,14 +1,28 @@
-body{
-    background: url(./img/fondo.jpg) no-repeat center center;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-attachment: fixed;
-    background-color: black;
+body,
+button {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
     color: aliceblue;
 }
 
+body:before {
+    /*  Fondo en el before para que background-attachment:  fixed; funcione en dispositivos moviles */
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url(./img/fondo.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: black;
+}
 
 #app {
     height: 100%;
@@ -24,7 +38,6 @@ header {
     width: 100%;
     text-align: center;
     justify-content: space-around;
-    
 }
 
 h1 {
@@ -33,11 +46,10 @@ h1 {
 }
 
 .carta {
+    margin: 0.2em 0px;
     border-radius: 25px;
     border: 1px solid rgb(212, 23, 230);
-    margin:5px;
 }
-
 
 img {
     max-width: 280px;
@@ -45,7 +57,7 @@ img {
     width: auto;
     display: block;
     border-radius: 25px;
-    margin:0px;
+    margin: 0px;
 }
 
 #tablero {
@@ -56,15 +68,15 @@ img {
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
+    margin-top: 0.5em;
 }
-
 
 button {
     height: 40px;
     width: 100px;
     background-color: rgb(168, 58, 219);
     border-radius: 5px;
-    margin: 10px;
+    margin: 0px;
     color: aliceblue;
 }
 
@@ -80,39 +92,40 @@ footer {
 }
 
 
-
 /* =========  VENTANA MODAL ======= */
+
 .contenedorModal {
+    width: 80vw;
     background: rgb(202, 156, 215);
     color: rgb(168, 58, 219);
     border-radius: 5px;
-    padding: 5px;
     text-align: center;
     position: fixed;
-    top: 100px;
-    left: 10%;
+    top: 20vh;
+    left: 10vw;
+    z-index: 10;
 }
 
-
-.close {
-    width: 5em;
+.header .close {
+    width: 2em;
+    height: 2em;
     float: right;
 }
 
-/* ========================= CANDLE ================ */ 
 
- 
-  .candle {
+/* ========================= CANDLE ================ */
+
+.candle {
     width: 34px;
     margin: 60px auto 0 auto;
-    position: relative; 
+    position: relative;
     height: 80%;
     align-self: flex-end;
     -webkit-animation: blink 0.1s infinite;
-            animation: blink 0.1s infinite;
-  }
-  
-  .wick {
+    animation: blink 0.1s infinite;
+}
+
+.wick {
     position: absolute;
     width: 6px;
     height: 50px;
@@ -122,16 +135,18 @@ footer {
     transform: translateX(-50%) skewX(2deg);
     border-radius: 10%;
     box-shadow: 0 0 2px 0px black;
-  }
-  .wick:before {
+}
+
+.wick:before {
     content: "";
     position: absolute;
     width: 0;
     left: 50%;
     height: 10px;
     box-shadow: 0 -14px 10px 8px white, 0 -10px 10px 8px rgba(255, 215, 0, 0.7), 0 -3px 10px 8px rgba(255, 106, 0, 0.7), 0 6px 3px 4px black;
-  }
-  .wick:after {
+}
+
+.wick:after {
     content: "";
     position: absolute;
     left: 50%;
@@ -139,18 +154,19 @@ footer {
     width: 0px;
     height: 0px;
     box-shadow: 0 5px 2px 3px gold, 0 20px 2px 14px gold, 0 -6px 4px 5px rgba(98, 33, 27, 0.8), 0 0px 1px 4px rgba(255, 106, 0, 0.7), 0 0px 3px 4px #ff6a00, 0 5px 3px 4px gold;
-  }
-  
-  .flame {
+}
+
+.flame {
     width: 20px;
     height: 50px;
     margin: 0px auto;
     position: relative;
     -webkit-animation: move 3s infinite, move-left 3s infinite;
-            animation: move 3s infinite, move-left 3s infinite;
+    animation: move 3s infinite, move-left 3s infinite;
     transform-origin: 50% 90%;
-  }
-  .flame .top {
+}
+
+.flame .top {
     width: 20px;
     height: 100%;
     position: absolute;
@@ -164,9 +180,10 @@ footer {
     transform: skewY(-10deg);
     box-shadow: 0 0px 0px 3px white, 0 -20px 1px 4px white, 0 -25px 2px 3px gold, 0 -30px 5px 4px #ff6a00, 0 0px 50px 10px #ff6a00, 0 -10px 2px 4px white, 0 -5px 3px 3px white;
     -webkit-animation: flame-up 4s infinite;
-            animation: flame-up 4s infinite;
-  }
-  .flame .shadows {
+    animation: flame-up 4s infinite;
+}
+
+.flame .shadows {
     position: absolute;
     left: 50%;
     top: 0;
@@ -174,8 +191,9 @@ footer {
     height: 20px;
     border-radius: 50%;
     box-shadow: 0 5px 20px 15px gold, 0 0px 100px 20px #ff6a00, 0 15px 50px 15px #ff6a00, 5px 30px 5px 13px #ff6a00, 5px 50px 5px 13px #ff6a00, 0 75px 50px 30px black;
-  }
-  .flame .bottom {
+}
+
+.flame .bottom {
     transform: scale(0.9);
     position: absolute;
     bottom: 6px;
@@ -185,9 +203,9 @@ footer {
     border-radius: 1%;
     background: #2c2b39;
     box-shadow: 0 6px 10px 12px rgba(60, 76, 125, 0.3), 0 0px 4px 8px #2c2b39, 0 -12px 10px 8px rgba(255, 106, 0, 0.5), 0 5px 7px 12px #2c2b39, 0 -3px 10px 12px #2c2b39, 5px -10px 10px 5px red, 0 -15px 10px 10px gold, 5px -25px 10px 5px gold, 0 2px 5px 10px #30537d, 0 -2px 2px 14px #76daff, 0 2px 10px 12px #76daff;
-  }
-  
-  .wax {
+}
+
+.wax {
     position: relative;
     top: 15px;
     width: 100%;
@@ -197,86 +215,79 @@ footer {
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, #ff9224 0px, #ff9224 20px, #58523a 50px);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ff9224", endColorstr="#58523a",GradientType=0 );
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ff9224", endColorstr="#58523a", GradientType=0);
     /* IE6-9 */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: inset 0 7px 12px -2px #fbf348, inset 0 9px 57px -3px rgba(255, 0, 0, 0.4), inset 0 -5px 8px 2px black, 0 0 3px 0px #ff6a00;
-  }
-  
-  @-webkit-keyframes move {
+}
+
+@-webkit-keyframes move {
     0% {
-      transform: skewX(2deg) skewY(5deg);
+        transform: skewX(2deg) skewY(5deg);
     }
     50% {
-      transform: skewX(-2deg) skewY(0deg);
+        transform: skewX(-2deg) skewY(0deg);
     }
     100% {
-      transform: skewX(2deg) skewY(5deg);
+        transform: skewX(2deg) skewY(5deg);
     }
-  }
-  
-  @keyframes move {
+}
+
+@keyframes move {
     0% {
-      transform: skewX(2deg) skewY(5deg);
+        transform: skewX(2deg) skewY(5deg);
     }
     50% {
-      transform: skewX(-2deg) skewY(0deg);
+        transform: skewX(-2deg) skewY(0deg);
     }
     100% {
-      transform: skewX(2deg) skewY(5deg);
+        transform: skewX(2deg) skewY(5deg);
     }
-  }
-  @-webkit-keyframes move-left {
-    50% {
-      transform: skewX(3deg);
-    }
-  }
-  @keyframes move-left {
-    50% {
-      transform: skewX(3deg);
-    }
-  }
-  @-webkit-keyframes flame-up {
-    50% {
-      box-shadow: 0 0px 0px 3px white, 0 -38px 1px 2px white, 0 -41px 2px 3px gold, 0 -50px 5px 4px #ff6a00, 0 0px 150px 10px #ff6a00, 0 -10px 2px 4px white, 0 -5px 3px 3px white;
-    }
-  }
-  @keyframes flame-up {
-    50% {
-      box-shadow: 0 0px 0px 3px white, 0 -38px 1px 2px white, 0 -41px 2px 3px gold, 0 -50px 5px 4px #ff6a00, 0 0px 150px 10px #ff6a00, 0 -10px 2px 4px white, 0 -5px 3px 3px white;
-    }
-  }
-  @-webkit-keyframes blink {
-    50% {
-      opacity: 0.95;
-    }
-  }
-  @keyframes blink {
-    50% {
-      opacity: 0.95;
-    }
-  }
+}
 
-  @media only screen and (max-width: 600px) {
-  
-    .carta{
-        border-radius: 0.5em;
-        margin:0.5em 0em;
+@-webkit-keyframes move-left {
+    50% {
+        transform: skewX(3deg);
     }
+}
 
-    .carta img{
-        max-width: 3.1em;
-        border-radius: 0.5em;
-       
+@keyframes move-left {
+    50% {
+        transform: skewX(3deg);
     }
+}
 
-    #dorso{
-     
-            align-self:  flex-end ;
-        
+@-webkit-keyframes flame-up {
+    50% {
+        box-shadow: 0 0px 0px 3px white, 0 -38px 1px 2px white, 0 -41px 2px 3px gold, 0 -50px 5px 4px #ff6a00, 0 0px 150px 10px #ff6a00, 0 -10px 2px 4px white, 0 -5px 3px 3px white;
     }
+}
 
-  }
+@keyframes flame-up {
+    50% {
+        box-shadow: 0 0px 0px 3px white, 0 -38px 1px 2px white, 0 -41px 2px 3px gold, 0 -50px 5px 4px #ff6a00, 0 0px 150px 10px #ff6a00, 0 -10px 2px 4px white, 0 -5px 3px 3px white;
+    }
+}
 
+@-webkit-keyframes blink {
+    50% {
+        opacity: 0.95;
+    }
+}
 
+@keyframes blink {
+    50% {
+        opacity: 0.95;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .carta {
+        border-radius: 0.2em;
+    }
+    .carta img {
+        max-width: 30vw;
+        border-radius: 0.2em;
+    }
+}

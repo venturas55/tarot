@@ -18,7 +18,7 @@
 
             <button @click="resetGame">REINICIAR TAROT</button>
         </header>
-    
+
 
         <div id="tablero">
             <div class="carta" v-for="carta in cartasMostradas">
@@ -27,10 +27,12 @@
             <div class="carta" id="dorso">
                 <img src="./img/reverso.jpg" alt="reverso" @click="sacaCarta" />
             </div>
-            <button @click="recuperarUltimaCarta" v-if="cartasRecuperables.length>0">
-                RECUPERAR ULTIMA
-            </button>
+
         </div>
+
+        <button @click="recuperarUltimaCarta" v-if="cartasRecuperables.length>0">
+            RECUPERAR ULTIMA
+        </button>
 
         <!--        <footer>
             Rose Infinita 2022
@@ -40,7 +42,7 @@
         <div class="contenedorModal" v-show="verOpciones">
             <div class="header">
                 <button class="close" @click="verOpciones=false;">X</button>
-                <h1>OPCIONES</h1>
+                <h2>OPCIONES</h2>
             </div>
             <div>
                 <div>
