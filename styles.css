@@ -46,7 +46,7 @@ h1 {
 }
 
 .carta {
-    margin: 0.2em 0px;
+    margin: 0.2em 0px; 
     border-radius: 25px;
     border: 1px solid rgb(212, 23, 230);
 }

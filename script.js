@@ -2,7 +2,7 @@ var app = new Vue({
     el: "#app",
     data: {
         baraja: [],
-        tipoBaraja: "riderwaite",
+        tipoBaraja: "marseille",
         cartasMostradas: [],
         cartasRecuperables: [],
         verOpciones: false
